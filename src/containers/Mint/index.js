@@ -10,7 +10,7 @@ import {
   getCurrentTotalSupply,
   // getMaxSupply,
   getCurrentMaxMint,
-  getMaxSupply,
+  getMaxMintingSupply,
   getOccupiedIds,
   getPrice,
   mintNFT,
@@ -28,7 +28,7 @@ const Mint = () => {
   const [txStatus, setTxStatus] = useState("")
 
   const [totalSupply, setTotalSupply] = useState(0)
-  const [maxSupply, setMaxSupply] = useState(0)
+  const [maxSupply, setMaxSupply] = useState(3353)
   const [maxMint, setMaxMint] = useState(1)
   const [mintPrice, setMintPrice] = useState(0)
 
@@ -45,7 +45,7 @@ const Mint = () => {
         let mintMax = await getCurrentMaxMint(library, account)
         setMaxMint(mintMax)
 
-        let maxSupply = await getMaxSupply(library, account)
+        let maxSupply = await getMaxMintingSupply(library, account)
         setMaxSupply(maxSupply)
 
         let mintPrice = await getPrice(library, account)

@@ -48,7 +48,7 @@ export const getCurrentMaxMint = async (library, account) => {
 }
 
 // Get Max Mintable Counts per Click from the Contract
-export const getMaxSupply = async (library, account) => {
+export const getMaxMintingSupply = async (library, account) => {
   const contract = getDoodleFriendsContract(
     getProviderOrSigner(library, account)
   )
@@ -118,20 +118,20 @@ export const mintNFT = async (
   )
 
   let ownerAddress = await getOwnerAddress(library, account)
-  let price = await getPrice()
-  console.log(price)
+  let price = await getPrice(library, account)
+  console.log(
+    ethers.BigNumber.from(price).mul(1e14).mul(randomIds.length).toString(),
+    randomIds.length
+  )
 
   try {
+    alertInfo("Tx Submitted")
     let txhash = await contract.mint(account, randomIds, {
-      value:
-        account === ownerAddress
-          ? 0
-          : ethers.BigNumber.from(price).mul(1e15).mul(randomIds.length),
+      value: ethers.BigNumber.from(price).mul(1e14).mul(randomIds.length),
       from: account,
     })
 
     let res = await txhash.wait()
-    alertInfo("Tx Submitted")
 
     if (res.transactionHash) {
       alertSuccess("Successfully Minted")
