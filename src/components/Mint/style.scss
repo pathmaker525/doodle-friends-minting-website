@@ -25,6 +25,36 @@
     }
   }
 
+  &-disconnect {
+    margin-top: 16px;
+    align-items: center;
+    column-gap: 24px;
+
+    & > button {
+      height: 28px;
+      border: none;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 0 16px;
+      background-image: linear-gradient(135deg, $orange, $pink);
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-image: linear-gradient(135deg, $pink, $orange);
+      }
+    }
+
+    & > span {
+      color: $green;
+      font-size: 12px;
+      text-align: center;
+      font-weight: bold;
+      padding: 8px;
+      background-color: rgba($color: $green, $alpha: 0.1);
+    }
+  }
+
   &-ticker {
     margin-bottom: 24px;
     font-size: 24px;
@@ -39,8 +69,13 @@
       width: 36px;
       height: auto;
       height: intrinsic;
-      color: $green;
+      color: $gray;
+      transition: 0.3s;
       cursor: pointer;
+
+      &:hover {
+        color: $green;
+      }
     }
 
     & > input {
@@ -63,16 +98,16 @@
       width: 100%;
       height: 100%;
       height: 48px;
-      font-size: 24px;
+      font-size: 16px;
       font-weight: bold;
-      color: $gray;
+      color: $black;
       border: none;
-      background-image: linear-gradient(135deg, $orange, $pink);
+      background-image: linear-gradient(135deg, $green, $purple);
       cursor: pointer;
       transition: 0.3s;
 
       &:hover {
-        background-image: linear-gradient(135deg, $pink, $orange);
+        background-image: linear-gradient(135deg, $purple, $green);
       }
     }
   }

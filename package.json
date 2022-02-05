@@ -13,6 +13,7 @@
     "@web3-react/walletconnect-connector": "^6.2.10",
     "dotenv": "^16.0.0",
     "ethers": "^5.5.4",
+    "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
@@ -22,6 +23,8 @@
     "react-modal": "^3.14.4",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "swr": "^1.2.1",
+    "truffle-plugin-verify": "^0.5.21",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
