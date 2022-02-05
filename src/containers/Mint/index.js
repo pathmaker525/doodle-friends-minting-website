@@ -124,7 +124,7 @@ const Mint = () => {
   }
 
   const onMint = async () => {
-    if (!!account) {
+    if (txStatus !== "Pending" && !!account) {
       const randomIds = await getRandomIds()
       console.log(randomIds)
 

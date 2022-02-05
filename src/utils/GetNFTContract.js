@@ -117,7 +117,6 @@ export const mintNFT = async (
     getProviderOrSigner(library, account)
   )
 
-  let ownerAddress = await getOwnerAddress(library, account)
   let price = await getPrice(library, account)
   console.log(
     ethers.BigNumber.from(price).mul(1e14).mul(randomIds.length).toString(),
@@ -125,12 +124,12 @@ export const mintNFT = async (
   )
 
   try {
-    alertInfo("Tx Submitted")
     let txhash = await contract.mint(account, randomIds, {
       value: ethers.BigNumber.from(price).mul(1e14).mul(randomIds.length),
       from: account,
     })
 
+    alertInfo("Tx Submitted")
     let res = await txhash.wait()
 
     if (res.transactionHash) {
