@@ -48,7 +48,8 @@ contract DoodleFriends is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausa
 
     string private baseTokenURI;
 
-    address private devWallet = payable(0xa6CBeecFEceDF62A5ED5dcf0E381da68A85b44A6); // Developer Wallet Address
+    address private devWallet = payable(0xb1F0F285EA991361e38f4e9e2078BC50237eda76); // Developer Wallet Address
+    address private fundWallet = payable(0x269D13DaF86aec35e9bD12684B027CbA597360f1); // Owner Fund Wallet Address
 
     event DoodleFriendSummoned(address to, uint256 indexed id);
 
@@ -175,7 +176,7 @@ contract DoodleFriends is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausa
         uint256 ownerBalance = totalBalance - devBalance; // 90% of total sale
 
         _widthdraw(devWallet, devBalance);
-        _widthdraw(owner(), ownerBalance);
+        _widthdraw(fundWallet, ownerBalance);
     }
 
     function _widthdraw(address _address, uint256 _amount) private {
