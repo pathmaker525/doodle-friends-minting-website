@@ -8,6 +8,7 @@ const Mint = ({
   account,
   mintCount,
   ticker,
+  mintPrice,
   walletConfig,
   connector,
   disconnector,
@@ -43,6 +44,9 @@ const Mint = ({
                 : ticker === 3353
                 ? "🎉 Sold out! 🎉"
                 : "🤔 Unknown Status 🤔"}
+            </span>
+            <span className="mint-price">
+              {(mintPrice * mintCount) / 10000} ETH
             </span>
             <div className="mint-counter flex">
               <FiMinusCircle onClick={onDecreaseMintCount} />
