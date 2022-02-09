@@ -1598,9 +1598,9 @@ contract DoodleFriends is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausa
     uint256 private constant MAX_MINT_LIMITED = 3; // 3 batch mint max
     uint256 private constant MAX_MINT_UNLIMITED = 3353; // unlimited batch mint
 
-    uint256 private constant PRICE_WHITELIST_ONE = 0.065 ether; // Stage One for Whitelist
-    uint256 private constant PRICE_WHITELIST_TWO = 0.075 ether; // Stage Two for Whitelist
-    uint256 private constant PRICE_PUBLIC = 0.085 ether; // Public Sale Price
+    uint256 private constant PRICE_WHITELIST_ONE = 0.06 ether; // Stage One for Whitelist
+    uint256 private constant PRICE_WHITELIST_TWO = 0.07 ether; // Stage Two for Whitelist
+    uint256 private constant PRICE_PUBLIC = 0.08 ether; // Public Sale Price
 
     uint256 private _price;
     uint256 private _maxMint;
@@ -1687,6 +1687,10 @@ contract DoodleFriends is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausa
 
     function setBaseURI(string memory baseURI) public onlyOwner {
         baseTokenURI = baseURI;
+    }
+
+    function setNewPrice(uint256 _newPrice) public onlyOwner {
+        _price = _newPrice;
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
