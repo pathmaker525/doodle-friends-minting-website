@@ -1627,7 +1627,7 @@ contract DoodleFriends is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausa
         _;
     }
 
-    constructor (string memory baseURI) ERC721("Doodle Friends", "DoodleFriends") {
+    constructor (string memory baseURI) ERC721("The Real Doodle Friends", "RealDoodleFriends") {
         setBaseURI(baseURI);
     }
 
