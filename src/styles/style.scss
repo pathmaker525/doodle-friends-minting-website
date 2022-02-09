@@ -161,3 +161,9 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
